@@ -1,0 +1,76 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+ <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: pink;
+}
+
+li {
+  float: left;
+  border-right:1px solid #bbb;
+  color: white;
+  text-align: right;
+}
+
+li:last-child {
+  border-right: none;
+  
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: black;
+}
+
+.active {
+  background-color: pink;
+}
+</style>
+</head>
+
+<title>Navigazione</title>
+</head>
+
+<body>
+
+<nav>
+
+ <ul>
+  
+  <li><a class="active" href="HomePage.jsp">HomePage</a></li>
+  <li><a href="Registrazione.jsp">Registrazione</a></li>
+  <li><a href="AggiornaProfilo.jsp">Modifica Profilo</a></li>
+  <li><a href ="Lista">Lista</a></li>
+  <li><% String username1 =(String)session.getAttribute("username");%>
+  
+  <li style="float:right">Area personale <br> <% String username =(String)session.getAttribute("username");
+if (username!=null){
+out.println (username);
+}%></li>
+
+</ul>
+
+
+    
+
+  
+</nav>
+ 
+</body>
+</html>
