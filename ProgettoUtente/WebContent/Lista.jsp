@@ -45,7 +45,7 @@ color: 	pink;
 <%
 session.getAttribute("listaUtenti");
 %>
-<% %>
+
 
 <body>
 
@@ -63,6 +63,7 @@ session.getAttribute("listaUtenti");
 <th>Actions</th>
 </tr>
 </thead>
+
  <c:forEach items="${listaUtenti}" var="current">
         <tr>
           <td><c:out value="${current.username}" /><td>
@@ -77,7 +78,7 @@ session.getAttribute("listaUtenti");
      </c:forEach>
 	</table>
 
- 
+
 <p>Per tornare alla HomePage <a href= "HomePage.jsp"> Clicca qui! </a><p> 
       
     </body>
