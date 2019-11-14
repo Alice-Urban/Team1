@@ -22,10 +22,9 @@ table {
   border-style: solid;
   color: black;
 }
-td {
-
-border: 1px solid grey;}
-
+td{
+border:1px solid grey;
+}
 
 html{
     height:90%;
@@ -45,7 +44,7 @@ color: 	pink;
 <%
 session.getAttribute("listaUtenti");
 %>
-
+<% %>
 
 <body>
 
@@ -53,34 +52,34 @@ session.getAttribute("listaUtenti");
 <thead>
 <tr>
 
-<th>Username</th> 
-<th>Password</th>  
-<th>Nome</th>
-<th>Cognome</th>
-<th>Indirizzo</th>
-<th>Città</th>
-<th>DataNascita</th>
-<th>Actions</th>
+<td>Username</td> 
+<td>Password</td>  
+<td>Nome</td>
+<td>Cognome</td>
+<td>Indirizzo</td>
+<td>Città</td>
+<td>DataNascita</td>
+<td>Actions</td>
 </tr>
 </thead>
 
- <c:forEach items="${listaUtenti}" var="current">
-        <tr>
-          <td><c:out value="${current.username}" /><td>
-          <td><c:out value="${current.password}" /><td>
-           <td><c:out value="${current.nome}" /><td>
-            <td><c:out value="${current.cognome}" /><td>
-             <td><c:out value="${current.indirizzo}" /><td>
-              <td><c:out value="${current.città}" /><td>
-               <td><c:out value="${current.data_nascita}" /><td>
-           
-        </tr>
+ <c:forEach items="${listaUtenti}" var="items">					
+				<tr>
+					<td><c:out value="${items.username}" /></td>
+					<td><c:out value="${items.password}" /></td>					
+					<td><c:out value="${items.nome}" /></td>
+					<td><c:out value="${items.cognome}" /></td>
+					<td><c:out value="${items.indirizzo}" /></td>
+					<td><c:out value="${items.città}" /></td>
+					<td><c:out value="${items.data_nascita}" /></td>
+								
+				</tr>
+				
      </c:forEach>
 	</table>
 
-
+ 
 <p>Per tornare alla HomePage <a href= "HomePage.jsp"> Clicca qui! </a><p> 
       
     </body>
     </html>
-  
