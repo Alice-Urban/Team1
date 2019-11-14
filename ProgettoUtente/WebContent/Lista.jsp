@@ -52,7 +52,7 @@ session.getAttribute("listaUtenti");
 <thead>
 <tr>
 
-<td>Username</td> 
+<td>Username_Utente</td> 
 <td>Password</td>  
 <td>Nome</td>
 <td>Cognome</td>

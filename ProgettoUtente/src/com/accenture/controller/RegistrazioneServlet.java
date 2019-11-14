@@ -95,7 +95,7 @@ public class RegistrazioneServlet extends HttpServlet {
 			 utenteDaInserire.setIndirizzo(indirizzoInserito);
 			 utenteDaInserire.setCitt‡(citt‡Inserita);
 			 utenteDaInserire.setData_nascita(localDate);
-		     utenteService.addUtente(utenteDaInserire);
+		     utenteService.addUtente(utenteDaInserire);	
 			 richiesta = request.getRequestDispatcher("Benvenuto.jsp");
 			 richiesta.forward(request, response);
 			
