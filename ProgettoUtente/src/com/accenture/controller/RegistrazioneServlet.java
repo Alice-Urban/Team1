@@ -78,6 +78,7 @@ public class RegistrazioneServlet extends HttpServlet {
 		String citt‡Inserita = request.getParameter("citt‡_inserita");
 
 
+
 		try {
 			utenteDaInserire = utenteService.getUtenteByUsername(usernameInserito);
 			if (utenteDaInserire!= null) {
@@ -125,6 +126,8 @@ public class RegistrazioneServlet extends HttpServlet {
 
 		}
 
+
+		 
 	}
 
 }

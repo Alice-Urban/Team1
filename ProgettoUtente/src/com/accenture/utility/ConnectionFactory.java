@@ -8,10 +8,11 @@ import com.ats.exceptions.DaoException;
 
 public class ConnectionFactory {
 	String driver="oracle.jdbc.driver.OracleDriver";
-	String connectionUrl="jdbc:oracle:thin:@localhost:1521:xe";
-	String dbUser="rossella";
-	String dbPassword="password";
-
+ 
+	String connectionUrl="jdbc:oracle:thin:@192.168.12.54:1521:xe";
+	String dbUser="studente";
+	String dbPassword="0000";
+ 
 
 	private static ConnectionFactory connectionFactory=null;
 
