@@ -13,6 +13,7 @@ import javax.servlet.http.HttpSession;
 
 import com.accenture.model.Utente;
 import com.accenture.service.UtenteService;
+import com.ats.exceptions.DaoException;
 
 
 
@@ -63,6 +64,12 @@ public class LoginServlet extends HttpServlet {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		} catch (DaoException sql) {
+			sql.getMessage();
+			richiesta = request.getRequestDispatcher("Error.jsp");
+			session.setAttribute("Errore",sql.getMessage());
+			richiesta.forward(request, response);
+			
 		}
 
 		
