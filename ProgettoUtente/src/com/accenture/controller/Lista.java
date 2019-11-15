@@ -44,7 +44,9 @@ public class Lista extends HttpServlet {
 					try {
 					
 			        listaUtenti = UtenteService.getallUtenti();
+			        
 				    session.setAttribute("listaUtenti", listaUtenti);
+				    
 					} catch (SQLException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();

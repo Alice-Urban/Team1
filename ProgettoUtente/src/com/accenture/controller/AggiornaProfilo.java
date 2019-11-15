@@ -35,7 +35,9 @@ public class AggiornaProfilo extends HttpServlet {
 		Utente utente= new Utente ();
 		RequestDispatcher richiesta;
 		UtenteService utenteService = new UtenteService();
+		
 		String usernameInserito = (String)session.getAttribute("username");
+		
 		String passwordInserita = request.getParameter("password");
 		String data_nascita = request.getParameter("data_di_nascita");
 		LocalDate localDate = LocalDate.parse(data_nascita);
@@ -54,7 +56,9 @@ public class AggiornaProfilo extends HttpServlet {
 				 utente.setIndirizzo(indirizzoInserito);
 				 utente.setCitt‡(citt‡Inserita);
 				 utente.setData_nascita(localDate);
+				 
 				 utenteService.updateUtente(utente);
+				 
 				 session.setAttribute("update", "Utente aggiornato!");
 				 richiesta = request.getRequestDispatcher("Benvenuto.jsp");
 				 richiesta.forward(request, response);
