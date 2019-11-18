@@ -14,7 +14,6 @@ import javax.servlet.http.HttpSession;
 
 import com.accenture.model.Utente;
 import com.accenture.service.UtenteService;
-import com.ats.exceptions.DaoException;
 
 @WebServlet("/AggiornaProfilo")
 public class AggiornaProfilo extends HttpServlet {
@@ -36,6 +35,7 @@ public class AggiornaProfilo extends HttpServlet {
 		Utente utente= new Utente ();
 		RequestDispatcher richiesta;
 		UtenteService utenteService = new UtenteService();
+
 		String usernameInserito = (String)session.getAttribute("username");
 		String passwordInserita = request.getParameter("password");
 		String data_nascita = request.getParameter("data_nascita");
@@ -74,6 +74,8 @@ public class AggiornaProfilo extends HttpServlet {
 			sql.printStackTrace();
 		
 			
+
+				 
 		}
 		
 	

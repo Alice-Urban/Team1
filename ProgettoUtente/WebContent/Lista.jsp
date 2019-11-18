@@ -2,6 +2,7 @@
     pageEncoding="ISO-8859-1"%>
     <%@ page import = "java.util.LinkedList" %>
     <%@ page import= "com.accenture.model.Utente" %>
+    <%@page errorPage="Error.jsp" %>
 
     <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
@@ -52,14 +53,15 @@ session.getAttribute("listaUtenti");
 <thead>
 <tr>
 
-<td>Username_Utente</td> 
+<td>Username</td> 
 <td>Password</td>  
 <td>Nome</td>
 <td>Cognome</td>
 <td>Indirizzo</td>
 <td>Città</td>
 <td>DataNascita</td>
-<td>Actions</td>
+<td>Gestisci clienti </td>
+
 </tr>
 </thead>
 
@@ -72,8 +74,20 @@ session.getAttribute("listaUtenti");
 					<td><c:out value="${items.indirizzo}" /></td>
 					<td><c:out value="${items.città}" /></td>
 					<td><c:out value="${items.data_nascita}" /></td>
+
 								
 				</tr>
+
+					
+					<td> <a href="AggiornaProfilo.jsp?username=${items.username}"> Update </a>
+					
+					<br>
+					
+					<a href="ServletDelete?username=${items.username}"> Delete </a>
+					
+					</td>
+					</tr>
+
 				
      </c:forEach>
 	</table>
@@ -82,4 +96,7 @@ session.getAttribute("listaUtenti");
 <p>Per tornare alla HomePage <a href= "HomePage.jsp"> Clicca qui! </a><p> 
       
     </body>
+
     </html>
+
+  

@@ -13,7 +13,6 @@ import javax.servlet.http.HttpSession;
 
 import com.accenture.model.Utente;
 import com.accenture.service.UtenteService;
-import com.ats.exceptions.DaoException;
 
 
 
@@ -64,6 +63,7 @@ public class LoginServlet extends HttpServlet {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+
 		} catch (DaoException sql) {
 			sql.printStackTrace();
 			sql.getMessage();
@@ -71,6 +71,7 @@ public class LoginServlet extends HttpServlet {
 			session.setAttribute("Errore","Siamo spiacenti, si è verificato un errore durante il login.");
 			richiesta.forward(request, response);
 			
+
 		}
 
 		

@@ -45,6 +45,7 @@ public class Lista extends HttpServlet {
 					try {
 					
 			        listaUtenti = UtenteService.getallUtenti();
+
 				    session.setAttribute("listaUtenti", listaUtenti);
 					} catch (SQLException e) {
 						// TODO Auto-generated catch block
@@ -53,6 +54,8 @@ public class Lista extends HttpServlet {
 					} catch (DaoException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
+=======
+
 					}
 
 					richiesta = request.getRequestDispatcher("Lista.jsp");
@@ -81,9 +84,11 @@ public class Lista extends HttpServlet {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					
+
 					} catch (DaoException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
+
 					}
 					
 				

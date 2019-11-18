@@ -9,7 +9,6 @@ import java.util.LinkedList;
 
 import com.accenture.model.Utente;
 import com.accenture.utility.ConnectionFactory;
-import com.ats.exceptions.DaoException;
 
 
 
@@ -20,14 +19,14 @@ public class DaoUtenteImpl implements IDaoUtente {
 	PreparedStatement prepStatement= null;
 	ResultSet resultset= null;
 	
-	private Connection getConnection() throws DaoException {
+	private Connection getConnection() {
 		Connection conn;
 		conn= ConnectionFactory.getIstance().getConnection();
 		return conn;
 	}
 
 	@Override
-	public void addUtente(Utente utente) throws ClassNotFoundException, DaoException {
+	public void addUtente(Utente utente) throws ClassNotFoundException {
 		Date data_nascita = Date.valueOf(utente.getData_nascita());
 		try{
 			String query="insert into Utente "
@@ -49,7 +48,8 @@ public class DaoUtenteImpl implements IDaoUtente {
 			conn.close();
 		} catch (SQLException sql) {
 			// TODO: handle exception
-			throw new DaoException(sql.getMessage());
+			e.printStackTrace();
+		throw new DaoException(sql.getMessage());
 		}
 		
 		
@@ -57,6 +57,7 @@ public class DaoUtenteImpl implements IDaoUtente {
 	
 		
 	}
+
 
 	@Override
 	public void updateUtente(Utente utente) throws SQLException, DaoException {
@@ -140,11 +141,18 @@ public class DaoUtenteImpl implements IDaoUtente {
 	}
 	}
 
-	@Override
-	public Utente getUtentebyUsername(String username) throws SQLException, DaoException {
-		try{
-			String query="select * from Utente where username=?";
+
+
+	
+	
 		
+		
+	
+
+	@Override
+	public Utente getUtentebyUsername(String username) throws SQLException {
+		try {
+		String query="select * from Utente where username=?";
 		conn=getConnection();
 		prepStatement=conn.prepareStatement(query);
 		prepStatement.setString(1, username);
@@ -163,11 +171,10 @@ public class DaoUtenteImpl implements IDaoUtente {
 			utente.setData_nascita(resultset.getDate("data_nascita").toLocalDate());
 	}
 		return utente;
-	}catch (SQLException sql) {
-		// TODO: handle exception
+	    }catch (SQLException sql)  {
 		throw new DaoException(sql.getMessage());
 	}
-	
 	}
+	
 
 }
