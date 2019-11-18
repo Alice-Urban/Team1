@@ -25,10 +25,9 @@ public class ServletAdministrator extends HttpServlet {
 
 	}
 
-	//update fatto e va Fra&Ele
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	}
+//	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//	}
 
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -70,7 +69,6 @@ public class ServletAdministrator extends HttpServlet {
 
 					richiesta = request.getRequestDispatcher("Lista.jsp");
 					response.sendRedirect("http://localhost:8082/ProgettoUtente/Lista");
-					
 				}
 			}
 		} catch (SQLException e) {

@@ -45,7 +45,6 @@ public class ServletDelete extends HttpServlet {
 					session.setAttribute("delete", "Utente cancellato!");
 					
 					
-					
 					richiesta = request.getRequestDispatcher("Lista.jsp");
 					response.sendRedirect("http://localhost:8082/ProgettoUtente/Lista");
 					
