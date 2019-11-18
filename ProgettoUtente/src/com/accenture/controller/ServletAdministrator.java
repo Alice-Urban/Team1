@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.accenture.exceptions.DaoException;
 import com.accenture.model.Utente;
 import com.accenture.service.UtenteService;
 
@@ -74,6 +75,11 @@ public class ServletAdministrator extends HttpServlet {
 		} catch (SQLException e) {
 
 			e.printStackTrace();
+		} catch (DaoException sql) {
+			sql.getMessage();
+			richiesta = request.getRequestDispatcher("Error.jsp");
+			session.setAttribute("Errore","Si è verificato un errore nell'aggiornamento dei dati.");
+			richiesta.forward(request, response);
 		}
 
 

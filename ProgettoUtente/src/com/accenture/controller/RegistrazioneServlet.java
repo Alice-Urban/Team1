@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.accenture.exceptions.DaoException;
 import com.accenture.model.Utente;
 import com.accenture.service.UtenteService;
 
@@ -36,7 +37,6 @@ public class RegistrazioneServlet extends HttpServlet {
 		Utente utente= new Utente ();
 		RequestDispatcher richiesta;
 		String usernameInserito = request.getParameter("username_inserito");
-
 		String bottone = request.getParameter("bottone2");
 
 		try {
@@ -47,7 +47,6 @@ public class RegistrazioneServlet extends HttpServlet {
 				richiesta = request.getRequestDispatcher("HomePage.jsp");
 				richiesta.forward(request,response);
 
-
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -57,19 +56,14 @@ public class RegistrazioneServlet extends HttpServlet {
 			session.setAttribute("Errore","Siamo spiacenti, si è verificato un errore durante l'eliminazione dell'utente.");
 			richiesta.forward(request, response);
 		}
+	
 	}
-
-
-
-
-
-
-
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();	
 		Utente utenteDaInserire= new Utente ();
 		RequestDispatcher richiesta;
+		UtenteService utenteService = new UtenteService();
 
 
 		String usernameInserito = request.getParameter("username_inserito");

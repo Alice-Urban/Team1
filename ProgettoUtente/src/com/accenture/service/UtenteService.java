@@ -5,6 +5,7 @@ import java.sql.SQLException;
 import java.util.LinkedList;
 
 import com.accenture.dao.DaoUtenteImpl;
+import com.accenture.exceptions.DaoException;
 import com.accenture.model.Utente;
 import com.accenture.utility.ConnectionFactory;
 
@@ -13,7 +14,7 @@ public class UtenteService {
 		
 		private DaoUtenteImpl daoUtente = new  DaoUtenteImpl();
 		 
-		public void addUtente(Utente utente) throws ClassNotFoundException {
+		public void addUtente(Utente utente) throws ClassNotFoundException, DaoException {
 			try {
 				daoUtente.addUtente(utente);
 			}catch (ClassNotFoundException e) {

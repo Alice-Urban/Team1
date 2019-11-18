@@ -14,9 +14,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.accenture.exceptions.DaoException;
 import com.accenture.model.Utente;
 import com.accenture.service.UtenteService;
-import com.ats.exceptions.DaoException;
+
 
 
 @WebServlet("/Lista")
@@ -54,7 +55,7 @@ public class Lista extends HttpServlet {
 					} catch (DaoException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
-=======
+
 
 					}
 

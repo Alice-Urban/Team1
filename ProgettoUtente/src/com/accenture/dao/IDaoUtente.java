@@ -3,6 +3,7 @@ package com.accenture.dao;
 import java.sql.SQLException;
 import java.util.LinkedList;
 
+import com.accenture.exceptions.DaoException;
 import com.accenture.model.Utente;
 
 public interface IDaoUtente {

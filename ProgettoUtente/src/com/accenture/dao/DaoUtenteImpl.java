@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.LinkedList;
 
+import com.accenture.exceptions.DaoException;
 import com.accenture.model.Utente;
 import com.accenture.utility.ConnectionFactory;
 
@@ -19,14 +20,14 @@ public class DaoUtenteImpl implements IDaoUtente {
 	PreparedStatement prepStatement= null;
 	ResultSet resultset= null;
 	
-	private Connection getConnection() {
+	private Connection getConnection() throws DaoException  {
 		Connection conn;
 		conn= ConnectionFactory.getIstance().getConnection();
 		return conn;
 	}
 
 	@Override
-	public void addUtente(Utente utente) throws ClassNotFoundException {
+	public void addUtente(Utente utente) throws ClassNotFoundException, DaoException {
 		Date data_nascita = Date.valueOf(utente.getData_nascita());
 		try{
 			String query="insert into Utente "
@@ -48,7 +49,7 @@ public class DaoUtenteImpl implements IDaoUtente {
 			conn.close();
 		} catch (SQLException sql) {
 			// TODO: handle exception
-			e.printStackTrace();
+			sql.printStackTrace();
 		throw new DaoException(sql.getMessage());
 		}
 		
@@ -150,7 +151,7 @@ public class DaoUtenteImpl implements IDaoUtente {
 	
 
 	@Override
-	public Utente getUtentebyUsername(String username) throws SQLException {
+	public Utente getUtentebyUsername(String username) throws SQLException, DaoException {
 		try {
 		String query="select * from Utente where username=?";
 		conn=getConnection();
