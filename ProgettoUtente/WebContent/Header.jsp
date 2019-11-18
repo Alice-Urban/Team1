@@ -11,10 +11,11 @@ ul {
 	margin: 0;
 	padding: 0;
 	overflow: hidden;
-	background-color: pink;
+	background-color: grey;
+	
 }
 
-li {
+li  {
 	float: left;
 	border-right: 1px solid #bbb;
 	color: white;
@@ -40,10 +41,6 @@ li
 
 
 a
-
-
-
-
 :hover
 
 
@@ -64,27 +61,22 @@ a
 
 )
 {
-background-color
+background-color:
+green;
 
 
 
 
-:
 
-
- 
-
-
-black
-
-
-
-
-;
 }
-.active {
-	background-color: pink;
+.active:hover {
+	background-color: green;
 }
+
+
+
+
+
 </style>
 </head>
 
@@ -98,15 +90,24 @@ black
 		<ul>
 
 			<li><a class="active" href="HomePage.jsp">HomePage</a></li>
-			<li><a href="Registrazione.jsp">Registrazione</a></li>
-			<li><a href="AggiornaProfilo.jsp">Modifica Profilo</a></li>
-			<li><% String admin = (String)session.getAttribute("username");
+			<li><a class ="active" href="Registrazione.jsp">Registrazione</a></li>
+			<li><a class="active" href="Benvenuto.jsp">Login</a></li>
+			
+			 
+			
+			
+			
+			
+			
+			
+			
+ 			<li><% String admin = (String)session.getAttribute("username");
     String passwordAdmin = (String)session.getAttribute("password");
     if (admin != null){
         if (admin.equalsIgnoreCase("admin")) {
         	if (passwordAdmin.equalsIgnoreCase("admin123")) { %>
-        		 <a href="Lista">Lista</a>
-		<%	} 
+        		 <a class= "active" href="Lista">Lista</a>
+			<% } 
         	}
         
     }%> 
@@ -114,8 +115,8 @@ black
 </li>
 
 			
-			<li style="float: right">Area personale <br>
-			
+		  
+			 <li style="float:right"  >Area personale    <br>
 
 			<% String username =(String)session.getAttribute("username");
 	        if (username!=null) 
@@ -124,7 +125,7 @@ black
   <li><%String user = (String)session.getAttribute("username");
        if (user != null){ %>
       
-        <a href="Logout.jsp">Logout</a></li>
+        <a  href="Logout.jsp">Logout</a> 
       <% }%> 
 
 		</ul>

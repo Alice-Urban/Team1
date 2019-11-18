@@ -1,29 +1,48 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    <%@page errorPage="Error.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
 <style type="text/css">
-h1, h3{
-font-family: 'Open Sans', arial, sans-serif;
-font-weight: bold;
-color: 	#C5908E;
+
+
+
+
+
 
 }
-h2 {
+.active:hover {
+	background-color: green;
+}
+
+h1{
 font-family: 'Open Sans', arial, sans-serif;
 font-weight: bold;
-color:	#FBBBB9;
+color: 	#black;
+
+}
+h2,h5 {
+font-family: 'Open Sans', arial, sans-serif;
+font-weight: bold;
+color:	black;
 
 }
 
 p {
 font-family: 'Open Sans', arial, sans-serif;
 font-weight: bold;
-color:red;
+color:black;
 
 }
+
+aside {
+
+float: right;
+width:25%;
+margin: 0 1.5%;
+ 
+}
+
 
 </style>
 
@@ -32,8 +51,19 @@ color:red;
 </head>
 <body>
 <header><%@ include file="Header.jsp"%></header>
-<h1><b> Bentornato! </b> </h1>  <br>
-<h2>Effettua il Login: </h2>
+
+<aside>
+
+<h1><b>Benvenuto <% String usern = (String)session.getAttribute("username");
+if(usern!=null){
+out.println(usern);}%>!</b></h1>
+
+
+
+<h2><b>Effettua il Login:</b> </h2>
+
+ 
+
 
 
 
@@ -46,7 +76,7 @@ out.println (risposta1);
 
 
 <form action ="LoginServlet" method="POST">
-  <b>Username: </b> <input placeholder ="username" type = "text" name="username_inserito">
+  <b>Username: </b> <input placeholder ="username" type = "text" name="username_inserito"><br>
   <b>Password: </b> <input placeholder ="password" type = "password" name="password_inserita"> 
   <input  type="submit" value="Invia" name ="bottone">
 </form>
@@ -59,6 +89,7 @@ out.println (delete);
 <b>Non ti sei ancora registrato?</b> <a href= "Registrazione.jsp"> Clicca qui! </a> 
 
 
+</aside>
 
 
 <footer><%@ include file="Footer.jsp"%></footer>

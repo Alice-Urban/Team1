@@ -9,12 +9,11 @@
    left: 0;
    bottom: 0;
    width: 100%;
-   background-color: pink;
+   background-color: grey;
    color: white;
    text-align: center;
 }
   
-
 
 
 li a {
@@ -26,29 +25,56 @@ li a {
 }
 
 li a:hover:not(.active) {
-  background-color: black;
+  background-color:green ;
 }
 
-.active {
-  background-color: pink;
+.active: hover {
+
+  background-color:green ;
+  
 }
+
+  
+
 </style>
+</head>
 <meta charset="ISO-8859-1">
 <title>Footer</title>
+
 </head>
 
 <body>
-
+<aside>
 <nav>
-<div class= "footer">
- <ul>
-  
-  <li><a class="active">Developed by: Alice Urban &copy;</a></li>
-  <li><a href="HomePage.jsp">HomePage</a></li>
-  <li><a href="mailto:indirizzo@email.com">Contattaci!</a></li>
 
+<div class= "footer">  
+
+
+ <ul>
+  	<a href="http://www.linkedin.com" target="_blank">
+<img src="https://image.flaticon.com/icons/svg/152/152815.svg" alt="LinkedIn" style="width:30px;height:30px;border:1px;margin-top:10px;float:right;margin-right:10px" ></a> 
+
+	<a href="http://www.instagram.com" target="_blank">
+<img src="https://image.flaticon.com/icons/svg/1384/1384015.svg" alt="Instagram" style="width:30px;height:30px;border:1p;margin-top:10px;float:right;margin-right:10px"></a> 
+
+	<a href="http://www.facebook.com" target="_blank">
+<img src="https://image.flaticon.com/icons/svg/59/59439.svg" alt="Facebook" style="width:30px;height:30px;border:1px;margin-top:10px;float:right;margin-right:10px"></a> 
+
+	<a href="http://www.maps.com" target="_blank">
+<img src="https://image.flaticon.com/icons/svg/58/58960.svg" alt="Maps" style="width:30px;height:30px;border:1px;margin-top:10px;float:right;margin-right:10px"></a> 
+
+
+
+  <li><a class="active">Developed by: Team1 &copy;</a></li>
+  <li><a  class="active" href="HomePage.jsp">HomePage</a></li>
+  <li><a class="active" href="mailto:indirizzo@email.com">Contattaci!</a></li>
+  
+ 
+  
 </ul>
 </div>
+
 </nav>
+</aside>
 </body>
 </html>
