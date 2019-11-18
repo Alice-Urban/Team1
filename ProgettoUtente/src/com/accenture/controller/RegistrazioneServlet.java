@@ -29,36 +29,38 @@ public class RegistrazioneServlet extends HttpServlet {
 		// TODO Auto-generated constructor stub
 	}
 
-	//
-	//	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	//		UtenteService utenteService = new UtenteService();
-	//		HttpSession session = request.getSession();	
-	//		Utente utente= new Utente ();
-	//		RequestDispatcher richiesta;
-	//		String usernameInserito = request.getParameter("username_inserito");
-	//		
-	//		String bottone = request.getParameter("bottone2");
-	//	
-	//			 try {
-	//				utente = utenteService.getUtenteByUsername(usernameInserito);
-	//				if (utente!=null && bottone.equalsIgnoreCase("Elimina")) {
-	//					utenteService.deleteUtente(usernameInserito);
-	//					session.setAttribute("delete", "Utente cancellato!");
-	//					richiesta = request.getRequestDispatcher("HomePage.jsp");
-	//					richiesta.forward(request,response);
-	//					
-	//					
-	//				}
-	//			} catch (SQLException e) {
-	//				// TODO Auto-generated catch block
-	//				e.printStackTrace();
-	//			} catch (DaoException sql) {
-	//				
-	//			}
-	//			 
+
+		protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+			UtenteService utenteService = new UtenteService();
+			HttpSession session = request.getSession();	
+			Utente utente= new Utente ();
+			RequestDispatcher richiesta;
+			String usernameInserito = request.getParameter("username_inserito");
+			
+			String bottone = request.getParameter("bottone2");
+		
+				 try {
+					utente = utenteService.getUtenteByUsername(usernameInserito);
+					if (utente!=null && bottone.equalsIgnoreCase("Elimina")) {
+						utenteService.deleteUtente(usernameInserito);
+						session.setAttribute("delete", "Utente cancellato!");
+						richiesta = request.getRequestDispatcher("HomePage.jsp");
+						richiesta.forward(request,response);
+						
+						
+					}
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (DaoException sql) {
+					richiesta = request.getRequestDispatcher("Error.jsp");
+					session.setAttribute("Errore","Siamo spiacenti, si è verificato un errore durante l'eliminazione dell'utente.");
+					richiesta.forward(request, response);
+				}
+				 
 
 
-	//	}
+		}
 
 
 
@@ -84,7 +86,7 @@ public class RegistrazioneServlet extends HttpServlet {
 			if (utenteDaInserire!= null) {
 
 				richiesta = request.getRequestDispatcher("Registrazione.jsp");
-				session.setAttribute("error", "Utente già inserito!");
+				session.setAttribute("Errore", "Utente già inserito!");
 				richiesta.forward(request,response);
 
 
@@ -121,7 +123,7 @@ public class RegistrazioneServlet extends HttpServlet {
 		catch (DaoException sql) {
 		sql.getMessage();
 		richiesta = request.getRequestDispatcher("Error.jsp");
-		session.setAttribute("Errore",sql.getMessage());
+		session.setAttribute("Errore","Si è verificato un errore nella registrazione dei dati.");
 		richiesta.forward(request, response);
 
 		}

@@ -65,9 +65,10 @@ public class LoginServlet extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (DaoException sql) {
+			sql.printStackTrace();
 			sql.getMessage();
 			richiesta = request.getRequestDispatcher("Error.jsp");
-			session.setAttribute("Errore",sql.getMessage());
+			session.setAttribute("Errore","Siamo spiacenti, si è verificato un errore durante il login.");
 			richiesta.forward(request, response);
 			
 		}

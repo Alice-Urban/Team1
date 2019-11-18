@@ -6,11 +6,19 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
+<style>
+h1,h2 {
+font-family: cursive;
+}
+</style>
 <title>Errore</title>
 </head>
 <body>
-<h1>Oops...</h1>
-    <h2><c:out value="${Errore}"/> <br></h2>
+<h1><font color= red>Oops...</font></h1>
+    <h2><font color= red><c:out value="${Errore}"/></font> </h2><br>
+   
+ 
+    
    
      <br> <img src="https://miro.medium.com/max/2800/1*QFRce-OnlybDjvWhMX8Y-w.gif">
      

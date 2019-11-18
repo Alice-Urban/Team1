@@ -9,9 +9,9 @@ import com.ats.exceptions.DaoException;
 public class ConnectionFactory {
 	String driver="oracle.jdbc.driver.OracleDriver";
  
-	String connectionUrl="jdbc:oracle:thin:@192.168.12.54:1521:xe";
-	String dbUser="studente";
-	String dbPassword="0000";
+	String connectionUrl="jdbc:oracle:thin:@localhost:1521:xe";
+	String dbUser="rossella";
+	String dbPassword="password";
  
 
 	private static ConnectionFactory connectionFactory=null;
@@ -35,7 +35,9 @@ public class ConnectionFactory {
 		try {
 			con= DriverManager.getConnection(connectionUrl,dbUser,dbPassword);
 		} catch (SQLException e) {
+			 e.printStackTrace();
 			 throw new DaoException("Siamo spiacenti, si è verificato un errore durante il caricamento dei dati.");
+			
 		 
 		}
 		return con;

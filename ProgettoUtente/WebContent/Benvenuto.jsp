@@ -33,7 +33,7 @@ align: right;
 
 <h1> Benvenuto/a <% String usernam = (String)session.getAttribute("username");
 if(usernam!=null){
-out.println(usernam);}%>! </h1>
+out.println(usernam);}%>!</h1>
 
 
 

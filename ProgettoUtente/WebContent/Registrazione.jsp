@@ -42,7 +42,7 @@ out.println (risposta);
   <b>Cognome: </b> <input placeholder ="cognome" type = "text" name="cognome_inserito"> <br>
   <b>Indirizzo: </b> <input placeholder ="indirizzo" type = "text" name="indirizzo_inserito"> <br>
   <b>Città: </b> <input placeholder ="città" type = "text" name="città_inserita"> <br>
-  <b> Data di nascita:</b> <input placeholder ="data_nascita"  type = "date" name="data_nascita"> <br>
+  <b>Data di nascita:</b> <input placeholder ="data_nascita"  type = "date" name="data_nascita"> <br>
   
   <input  type="submit" value="Invia" name ="bottoneRegistrazione"> <br>
 

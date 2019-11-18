@@ -8,9 +8,9 @@ import com.ats.exceptions.DaoException;
 
 public interface IDaoUtente {
 	public void addUtente(Utente utente) throws ClassNotFoundException, DaoException;
-    //public void updateUtente(Utente utente)throws SQLException;
-	//public void deleteUtente(String username)throws SQLException;
-	//public LinkedList<Utente> getallUtenti () throws SQLException;
+    public void updateUtente(Utente utente)throws SQLException, DaoException;
+	public void deleteUtente(String username)throws SQLException, DaoException;
+	public LinkedList<Utente> getallUtenti () throws SQLException,DaoException;
 	public Utente getUtentebyUsername (String username) throws SQLException, DaoException;
 
 }
